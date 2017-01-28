@@ -10,7 +10,7 @@ try {
 	$conn = new PDO("mysql:host=localhost;dbname=".DATABASE, USERNAME, PASSWORD);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully"; 
+    echo "Connected successfully\n"; 
     $stmt = $conn->prepare("SELECT * FROM website WHERE name = ?"); 
     $stmt->execute(['themeforest']);
 
@@ -55,7 +55,7 @@ try {
 
 			$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id) values (?,?,?,?,?,?,?,?)");
 			$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$row['id']]);
-			echo "inserted";
+			echo "inserted\n";
 		}
 	}
 

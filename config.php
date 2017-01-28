@@ -1,7 +1,7 @@
 <?php 
 	
 	define('SERVER_NAME', 'localhost');
-	define('DATABASE', 'themeforst');
+	define('DATABASE', 'themeforest');
 	define('USERNAME', 'root');
 	define('PASSWORD', '');
 	
