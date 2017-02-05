@@ -12,6 +12,7 @@ class ItemController extends Controller
 	{
 		$website = Website::first();
 		$category = $website->categories()->first();
-		return $category->items;
+		// return $category->items;
+		return view('welcome');
 	}
 }
