@@ -6,17 +6,17 @@
 		    ================================================== -->
 		<header>
 			<div class="logo-box">
-				<a class="logo" href="index.html"><img alt="" src="{{url('images/logo.png')}}"></a>
+				<a class="logo" href="{{url('/')}}"><img alt="" src="{{url('images/logo.png')}}"></a>
 			</div>
 			
 			<a class="elemadded responsive-link" href="#">Menu</a>
 
 			<div class="menu-box">
 				<ul class="menu">
-					<li><a class="active" href="index.html"><span>Home</span></a></li>
-					<li><a href="about.html"><span>About</span></a></li>
-					<li><a href="blog.html"><span>blog</span></a></li>
-					<li><a href="single-post.html"><span>Single Post</span></a></li>
+					<li><a class="active" href="{{url('/')}}"><span>Home</span></a></li>
+					<li><a href="#"><span>About</span></a></li>
+					<li><a href="#"><span>blog</span></a></li>
+					<li><a href="#"><span>Single Post</span></a></li>
 					<li class="drop"><a href="#"><span>Go To Level 2</span></a>
 						<ul class="drop-down">
 							<li><a href="#"><span>Level 2</span></a></li>
@@ -29,7 +29,7 @@
 							<li><a href="#"><span>Level 2</span></a></li>
 						</ul>
 					</li>
-					<li><a href="contact.html"><span>Contact</span></a></li>
+					<li><a href="#"><span>Contact</span></a></li>
 				</ul>				
 			</div>
 
@@ -61,9 +61,9 @@
 								<div class="flexslider">
 									<ul class="slides">
 										<li>
-											<img alt="" src="{{url('upload/photo1.jpg')}}" />
+											<img alt="" src="{{url($item->big_picture_link)}}" />
 										</li>
-										<li>
+										{{-- <li>
 											<img alt="" src="{{url('upload/photo2.jpg')}}" />
 										</li>
 										<li>
@@ -71,14 +71,16 @@
 										</li>
 										<li>
 											<img alt="" src="{{url('upload/photo2.jpg')}}" />
-										</li>
+										</li> --}}
 									</ul>
 								</div>
 
 								<div class="project-text">
-									<h1>Amazing Car Wallpaper</h1>
+									{{-- <h1>Amazing Car Wallpaper</h1>
 									<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-									<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. </p>			
+									<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. </p> --}}
+								{{-- echo html_entity_decode(htmlspecialchars_decode($htmlcode)); --}}
+						<?php echo html_entity_decode(htmlspecialchars_decode($item->description)) ?>			
 								</div>
 
 								<div class="similar-projects">
@@ -195,5 +197,10 @@
 
 	</div>
 	<!-- End Container -->
+
+	<div class="preloader">
+		<img alt="" src="{{url('images/preloader.gif')}}{{url('">
+	</div>
+
 @endsection
 

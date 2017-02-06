@@ -67,7 +67,7 @@
                 <div class="portfolio-page">
                     <div class="portfolio-box">
                     @foreach($items as $item)
-                        <div class="project-post web-design illustration">
+                        <div class="project-post">
                             <img alt="" src="{{url($item->big_picture_link)}}">
                             <div class="hover-box">
                                 <div class="project-title">

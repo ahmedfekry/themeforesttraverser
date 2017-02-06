@@ -56,7 +56,8 @@ try {
 				$price = $html->find('.js-purchase-price',0)->innertext;
 
 				// description
-				$description = $html->find('.user-html',0)->innertext;
+				// htmlentities(htmlspecialchars(thehmldata));
+				$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
 
 				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id) values (?,?,?,?,?,?,?,?)");
 				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$row['id']]);
