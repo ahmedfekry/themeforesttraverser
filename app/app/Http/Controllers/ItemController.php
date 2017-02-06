@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Website;
-
+use App\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -13,6 +13,12 @@ class ItemController extends Controller
 		$website = Website::first();
 		$category = $website->categories()->first();
 		// return $category->items;
-		return view('welcome');
+		$items = $category->items;
+		return view('welcome', compact('items'));
+	}
+
+	public function show(Item $item)
+	{
+		return view('single',compact('item'));
 	}
 }
