@@ -80,7 +80,10 @@
 									<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
 									<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. </p> --}}
 								{{-- echo html_entity_decode(htmlspecialchars_decode($htmlcode)); --}}
-						<?php echo html_entity_decode(htmlspecialchars_decode($item->description)) ?>			
+								{{-- <div class="custom-content"> --}}
+									<?php echo html_entity_decode(htmlspecialchars_decode($item->description)); ?>			
+									
+								{{-- </div> --}}
 								</div>
 
 								<div class="similar-projects">
@@ -92,7 +95,7 @@
 												<div class="project-title">
 													<h2>Cool App Design</h2>
 													<span>development, mobile</span>
-													<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+													<div><a href="#"><i class="fa fa-arrow-right"></i></a></div>
 												</div>
 											</div>
 										</div>
@@ -103,7 +106,7 @@
 												<div class="project-title">
 													<h2>Cool App Design</h2>
 													<span>development, mobile</span>
-													<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+													<div><a href="#"><i class="fa fa-arrow-right"></i></a></div>
 												</div>
 											</div>
 										</div>

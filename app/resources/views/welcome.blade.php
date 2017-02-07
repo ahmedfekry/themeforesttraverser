@@ -79,8 +79,10 @@
                         </div>
                     @endforeach
 
-                       
                     </div>
+                    <div class="col-md-10 col-md-offset-4">
+                        {{$items->links()}}
+                    </div> 
                 </div>
             </div>
         </div>

@@ -1580,3 +1580,7 @@ ul.depth li:before {
 .comment-form .message.success {
     color:#1e9397;
 }
+
+.project-text img {
+    width: 100%;
+}

@@ -16,8 +16,8 @@
     <link rel="stylesheet" type="text/css" href="{{url("css/magnific-popup.css", $args = [])}}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{url("css/font-awesome.min.css", $args = [])}}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{url("css/flexslider.css", $args = [])}}" media="screen">
-    <link rel="stylesheet" type="text/css" href="{{url("css/style.css", $args = [])}}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{url("css/responsive.css", $args = [])}}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{url("css/style.css", $args = [])}}" media="screen">
 	
 </head>
 <body>
