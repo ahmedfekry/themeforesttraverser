@@ -12,7 +12,6 @@ class ItemController extends Controller
 	{
 		$website = Website::first();
 		$category = $website->categories()->first();
-		// return $category->items;
 		$items = $category->items()->paginate(30);
 		return view('welcome', compact('items'));
 	}
