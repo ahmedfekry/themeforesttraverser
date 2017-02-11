@@ -51,7 +51,7 @@ try {
 				$big_image = $html->find('.item-preview a img',0)->src;
 
 				// meta-attributes 
-				$meta_attributes = $html->find('.meta-attributes',0)->innertext;
+				$meta_attributes = htmlentities(htmlspecialchars($html->find('.meta-attributes',0)->innertext));
 
 				// price 
 				$price = $html->find('.js-purchase-price',0)->innertext;

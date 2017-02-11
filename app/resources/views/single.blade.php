@@ -115,7 +115,7 @@
 							</div>						
 						</div>
 						<div class="sidebar">
-							<div class="post-info">
+							{{-- <div class="post-info">
 								<h1>Project Info</h1>
 								<ul>
 									<li>
@@ -189,7 +189,8 @@
 										Highly Customizable
 									</li>
 								</ul>
-							</div>
+							</div> --}}
+							<?php echo html_entity_decode(htmlspecialchars_decode($item->meta_data)); ?>
 						</div>
 					</div>
 
