@@ -1584,3 +1584,134 @@ ul.depth li:before {
 .project-text img {
     width: 100%;
 }
+
+.meta-attributes {
+    color: #999999
+}
+.meta-attributes tr td {
+    font-size: 14px;
+    padding-bottom: 15px;
+    vertical-align: top
+}
+.meta-attributes tr:last-child td {
+    padding-bottom: 0px
+}
+.meta-attributes a {
+    color: #0084B4
+}
+.meta-attributes a:hover {
+    color: #00719b
+}
+.meta-attributes__attr-name {
+    color: #454545;
+    font-weight: bold;
+    padding-right: 10px;
+    width: 140px
+}
+.meta-attributes__attr-tags {
+    display: table-cell;
+    position: relative;
+    padding-right: 9px;
+    max-width: 185px;
+    overflow: hidden
+}
+.meta-attributes__attr-tags:before {
+    content: "";
+    position: absolute;
+    background: -webkit-linear-gradient(left, rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.8) 90%, #fafafa 100%);
+    background: linear-gradient(to right, rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.8) 90%, #fafafa 100%);
+    top: 1px;
+    right: 0px;
+    width: 10%;
+    height: 100%;
+    z-index: 10
+}
+.ie9 .meta-attributes__attr-tags {
+    white-space: normal
+}
+
+.box {
+    background-color: #fafafa;
+    border: 1px solid #e1e8ed;
+    padding: 16px;
+    margin-bottom: 20px
+}
+.box.-color-light {
+    background: whitesmoke;
+    color: #666666
+}
+.box.-color-mid {
+    background-color: #ededed;
+    color: #454545
+}
+.box.-color-dark {
+    background-color: #454545;
+    color: white
+}
+.box.-color-yellow {
+    background-color: #f5f5b4;
+    color: #454545
+}
+.box.-color-green {
+    background-color: #82b440;
+    color: white
+}
+.box.-border-gray {
+    border: 1px solid #e0e0e0
+}
+.box.-radius-all {
+    border-radius: 4px
+}
+.box.-radius-top {
+    border-radius: 4px 4px 0 0
+}
+.box.-radius-bottom {
+    border-radius: 0 0 4px 4px
+}
+.box.-radius-none {
+    border-radius: 0
+}
+.box.-size-m {
+    padding: 40px
+}
+.box.-stacked,
+.box.-stacked-radius {
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1
+}
+.box.-stacked-radius:first-child {
+    border-radius: 4px 4px 0 0
+}
+.box.-stacked-radius:last-child {
+    border-radius: 0 0 4px 4px
+}
+.box.-spacing-small {
+    margin-bottom: 16px
+}
+.box.-drop-shadow {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3)
+}
+.box__strike {
+    margin-top: 16px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 1
+}
+.box__strike span {
+    background: #fafafa;
+    padding: 0 8px
+}
+.box__strike:before {
+    border-top: 1px solid #e1e8ed;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1
+}

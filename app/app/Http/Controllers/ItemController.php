@@ -18,6 +18,7 @@ class ItemController extends Controller
 
 	public function show(Item $item)
 	{
-		return view('single',compact('item'));
+		$rand = Item::inRandomOrder()->take(2)->get();
+		return view('single',compact(['item','rand']));
 	}
 }

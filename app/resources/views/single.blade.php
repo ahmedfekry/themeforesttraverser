@@ -76,37 +76,28 @@
 								</div>
 
 								<div class="project-text">
-									{{-- <h1>Amazing Car Wallpaper</h1>
-									<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-									<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. </p> --}}
-								{{-- echo html_entity_decode(htmlspecialchars_decode($htmlcode)); --}}
-								{{-- <div class="custom-content"> --}}
 									<?php echo html_entity_decode(htmlspecialchars_decode($item->description)); ?>			
-									
-								{{-- </div> --}}
 								</div>
 
 								<div class="similar-projects">
 									<h1>Similar Projects</h1>
 									<div class="portfolio-box">
 										<div class="project-post">
-											<img alt="" src="{{url('upload/image1.jpg')}}">
+											<img alt="" src="{{url($rand[0]->big_picture_link)}}">
 											<div class="hover-box">
 												<div class="project-title">
-													<h2>Cool App Design</h2>
-													<span>development, mobile</span>
-													<div><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+													<h2>{{$rand[0]->title}}</h2>
+													<div><a href="{{$rand[0]->link}}"><i class="fa fa-arrow-right"></i></a></div>
 												</div>
 											</div>
 										</div>
 
 										<div class="project-post">
-											<img alt="" src="{{url('upload/image2.jpg')}}">
+											<img alt="" src="{{url($rand[1]->big_picture_link)}}">
 											<div class="hover-box">
 												<div class="project-title">
-													<h2>Cool App Design</h2>
-													<span>development, mobile</span>
-													<div><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+													<h2>{{$rand[0]->title}}</h2>
+													<div><a href="{{$rand[0]->link}}"><i class="fa fa-arrow-right"></i></a></div>
 												</div>
 											</div>
 										</div>
@@ -115,82 +106,23 @@
 							</div>						
 						</div>
 						<div class="sidebar">
-							{{-- <div class="post-info">
+							<div class="post-info">
 								<h1>Project Info</h1>
 								<ul>
 									<li>
-										<span><i class="fa fa-user"></i></span><a href="#">Premium Layers</a>
+										<span><i class="fa fa-user"></i></span><a href="#">{{$item->category->name}}</a>
 									</li>
 									<li>
-										<span><i class="fa fa-heart"></i></span><a href="#">138 Likes</a>
+										<span><i class="fa fa-money"></i></span><a href="#">{{$item->price}} $</a>
 									</li>
 									<li>
-										<span><i class="fa fa-calendar"></i></span><a href="#">14 Jannuary, 2014</a>
-									</li>
-									<li>
-										<span><i class="fa fa-link"></i></span><a href="#">http:www.themeforest.net</a>
+										<span><i class="fa fa-link"></i></span><a target="_blank" href="{{$item->link}}">themeforest</a>
 									</li>
 								</ul>
 							</div>
-							<div class="project-gallery">
-								<h1>Project Gallery</h1>
-								<ul>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb1.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb2.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb3.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb4.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb5.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb6.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb7.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb8.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb9.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb10.jpg')}}"></a>
-									</li>
-									<li>
-										<a href="#"><img alt="" src="{{url('upload/thumb11.jpg')}}"></a>
-									</li>
-								</ul>
+							<div class="box">
+								<?php echo html_entity_decode(htmlspecialchars_decode($item->meta_data)); ?>
 							</div>
-							<div class="project-feature">
-								<h1>Project Feature</h1>
-								<ul>
-									<li>
-										Responsive Layout
-									</li>
-									<li>
-										Font Awesome Icons
-									</li>
-									<li>
-										Clean &#38; Commented Code
-									</li>
-									<li>
-										Pixel perfect Design
-									</li>
-									<li>
-										Highly Customizable
-									</li>
-								</ul>
-							</div> --}}
-							<?php echo html_entity_decode(htmlspecialchars_decode($item->meta_data)); ?>
 						</div>
 					</div>
 

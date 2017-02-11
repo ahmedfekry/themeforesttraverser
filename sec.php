@@ -54,7 +54,7 @@ try {
 				$meta_attributes = htmlentities(htmlspecialchars($html->find('.meta-attributes',0)->innertext));
 
 				// price 
-				$price = $html->find('.js-purchase-price',0)->innertext;
+				$price = intval(substr($html->find('.js-purchase-price',0)->innertext,1,2));
 
 				// description
 				// htmlentities(htmlspecialchars(thehmldata));
