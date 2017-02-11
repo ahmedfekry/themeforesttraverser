@@ -12,18 +12,43 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
 	echo "<br>";
-	
-    $stmt = $conn->prepare("SELECT * FROM website WHERE name = ?"); 
-    $stmt->execute(['themeforest']);
+	$website_name = "themeforest";
+	$website_link = ""; // could be null
+	$category_name = "wordpress"; 
+	$category_link = ""; // could be null
 
-    // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-   	$row = $stmt->fetch();
-    
-	$stmt = $conn->prepare("SELECT * FROM category WHERE website_id = ?"); 
-	$stmt->execute([$row['id']]);
+	$website = null;
+	$category = null;
+
+	$stmt = $conn->prepare("SELECT * FROM website WHERE name = ?"); 
+	$stmt->execute([$website_name]);
+	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); // set the resulting array to associative
+   	$website = $stmt->fetch();
+
+   	if ($website == null) {
+   		$stmt = $conn->prepare("INSERT INTO website (name) values (?)");
+		$stmt->execute([$website_name]);   
+
+	    $stmt = $conn->prepare("SELECT * FROM website WHERE name = ?"); 
+	    $stmt->execute([$website_name]);
+	    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); // set the resulting array to associative
+	   	$website = $stmt->fetch();
+    }
+
+	$stmt = $conn->prepare("SELECT * FROM category WHERE website_id = ? AND name = ?"); 
+	$stmt->execute([$website['id'],$category_name]);
 	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-   	$row = $stmt->fetch();
+   	$category = $stmt->fetch();
+   	if ($category == null) {
+   		$stmt = $conn->prepare("INSERT INTO category (name,website_id) values (?,?)");
+		$stmt->execute([$category_name,$website['id']]);
+
+	   	$stmt = $conn->prepare("SELECT * FROM category WHERE website_id = ? AND name = ?"); 
+		$stmt->execute([$website['id'],$category_name]);
+		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+	   	$category = $stmt->fetch();
+   	}
+
 	// var_dump($row);
 	for ($i=1; $i < 3; $i++) { 
 		# code...
@@ -61,7 +86,7 @@ try {
 				$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
 
 				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id) values (?,?,?,?,?,?,?,?)");
-				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$row['id']]);
+				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id']]);
 				echo "inserted";
 		   		echo "<br>";
 
