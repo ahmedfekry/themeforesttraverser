@@ -62,6 +62,10 @@ try {
 			
 			// title
 			$title = $e->getElementByTagName('h3')->getElementByTagName('a')->innertext;
+
+			// meta_element
+			$meta_element = str_replace(' ', ',', $title);
+
 			$stmt = $conn->prepare("SELECT * FROM item WHERE title = ?"); 
 			$stmt->execute([$title]);
 			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
@@ -84,9 +88,12 @@ try {
 				// description
 				// htmlentities(htmlspecialchars(thehmldata));
 				$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
-
-				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id) values (?,?,?,?,?,?,?,?)");
-				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id']]);
+				$meta_element .= str_replace(' ',',',$html->find('.user-html',0)->children(1)->innertext);
+				// echo $meta_element;
+				// echo "<hr>";
+				// continue;
+				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element) values (?,?,?,?,?,?,?,?,?)");
+				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element]);
 				echo "inserted";
 		   		echo "<br>";
 
