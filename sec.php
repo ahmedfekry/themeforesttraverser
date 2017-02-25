@@ -104,13 +104,20 @@ try {
 				// htmlentities(htmlspecialchars(thehmldata));
 				$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
 				$meta_element .= str_replace(' ',',',$html->find('.user-html',0)->children(1)->innertext);
+
+				$tags = '';
+				foreach($html->find('.meta-attributes__attr-tags a') as $e) {
+					$tags .=$e->innertext.',';
+				}
+				$meta_element .=$tags;
+				// echo $tags;
 				// echo $meta_element;
 				// echo "<hr>";
-				// continue;
+				// break;
 				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element,slug,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?)");
 				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element,$slug,date('Y-m-d H:i:s'),date('Y-m-d H:i:s')]);
 				echo "inserted";
-		   		echo "<br>";
+				echo "<br>";
 
 		   	}else{
 
