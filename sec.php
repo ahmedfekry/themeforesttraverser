@@ -6,6 +6,18 @@ error_reporting(E_ALL);
 require 'html_dom.php';
 require 'config.php';
 
+function format_uri( $string, $separator = '-' )
+{
+    $accents_regex = '~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i';
+    $special_cases = array( '&' => 'and', "'" => '');
+    $string = mb_strtolower( trim( $string ), 'UTF-8' );
+    $string = str_replace( array_keys($special_cases), array_values( $special_cases), $string );
+    $string = preg_replace( $accents_regex, '$1', htmlentities( $string, ENT_QUOTES, 'UTF-8' ) );
+    $string = preg_replace("/[^a-z0-9]/u", "$separator", $string);
+    $string = preg_replace("/[$separator]+/u", "$separator", $string);
+    return $string;
+}
+
 try {
 	$conn = new PDO("mysql:host=localhost;dbname=".DATABASE, USERNAME, PASSWORD);
     // set the PDO error mode to exception
@@ -63,6 +75,9 @@ try {
 			// title
 			$title = $e->getElementByTagName('h3')->getElementByTagName('a')->innertext;
 
+			// slug url
+			$slug = format_uri($title);
+
 			// meta_element
 			$meta_element = str_replace(' ', ',', $title);
 
@@ -92,8 +107,8 @@ try {
 				// echo $meta_element;
 				// echo "<hr>";
 				// continue;
-				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element) values (?,?,?,?,?,?,?,?,?)");
-				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element]);
+				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element,slug,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?)");
+				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element,$slug,date('Y-m-d H:i:s'),date('Y-m-d H:i:s')]);
 				echo "inserted";
 		   		echo "<br>";
 

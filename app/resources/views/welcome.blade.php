@@ -89,12 +89,13 @@
                     <div class="portfolio-box">
                         @foreach($items as $item)
                             <div class="project-post ">
-                                <img alt="" src="{{url($item->big_picture_link)}}">
+                                <img alt="" src="{{$item->big_picture_link}}">
+                                {{-- <img alt="" src="upload/image1.jpg"> --}}
                                 <div class="hover-box">
                                     <div class="project-title">
                                         <h2>{{ $item->title }}</h2>
-                                        <span>development, mobile</span>
-                                        <div><a href="{{url('/items/'.$item->id)}}"><i class="fa fa-arrow-right"></i></a></div>
+                                        <span>{{$item->category->name}}</span>
+                                        <div><a href="{{url('/items/'.$item->slug)}}"><i class="fa fa-arrow-right"></i></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -125,15 +126,16 @@
     <div class="preloader">
         <img alt="" src="images/preloader.gif">
     </div>
-    <script src="{{url("js/jquery.min.js")}}"></script>
-    <script src="{{url("js/jquery.migrate.js")}}"></script>
-    <script src="{{url("js/jquery.magnific-popup.min.js")}}"></script>
-    <script src="{{url("js/bootstrap.js")}}"></script>
-    <script src="{{url("js/jquery.imagesloaded.min.js")}}"></script>
-    <script src="{{url("js/jquery.isotope.min.js")}}"></script>
-    <script src="{{url("js/retina-1.1.0.min.js")}}"></script>
-    <script src="{{url("js/jquery.nicescroll.min.js")}}"></script>
-    <script src="{{url("js/script.js")}}"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
 
 </body>
 </html>

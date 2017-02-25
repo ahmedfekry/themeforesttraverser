@@ -12,13 +12,16 @@ class ItemController extends Controller
 	{
 		$website = Website::first();
 		$category = $website->categories()->first();
-		$items = $category->items()->paginate(30);
+		$items = $category->items()->paginate(28);
 		return view('welcome', compact('items'));
 	}
 
-	public function show(Item $item)
+	public function show($slug)
 	{
+		$item = Item::where('slug','=',$slug)->first();
+	
 		$rand = Item::inRandomOrder()->take(2)->get();
 		return view('single',compact(['item','rand']));
 	}
+
 }

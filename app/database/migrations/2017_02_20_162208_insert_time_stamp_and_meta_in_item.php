@@ -15,6 +15,7 @@ class InsertTimeStampAndMetaInItem extends Migration
     {
         Schema::table('item', function ($table) {
             $table->text('meta_element')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }
