@@ -94,6 +94,7 @@
                                 <div class="hover-box">
                                     <div class="project-title">
                                         <h2>{{ $item->title }}</h2>
+                                        {{-- <h2>{{ substr($item->title,0,15) }}</h2> --}}
                                         <span>{{$item->category->name}}</span>
                                         <div><a href="{{url('/items/'.$item->slug)}}"><i class="fa fa-arrow-right"></i></a></div>
                                     </div>
