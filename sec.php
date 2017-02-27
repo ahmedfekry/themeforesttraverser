@@ -62,7 +62,7 @@ try {
    	}
 
 	// var_dump($row);
-	for ($i=1; $i < 3; $i++) { 
+	for ($i=1; $i < 2; $i++) { 
 		# code...
 		$url = 'https://themeforest.net/category/wordpress?page='.$i;
 		// Retrieve the DOM from a given URL
@@ -80,7 +80,7 @@ try {
 
 			// meta_element
 			$meta_element = str_replace(' ', ',', $title);
-
+			$meta_description = '';
 			$stmt = $conn->prepare("SELECT * FROM item WHERE title = ?"); 
 			$stmt->execute([$title]);
 			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
@@ -103,8 +103,10 @@ try {
 				// description
 				// htmlentities(htmlspecialchars(thehmldata));
 				$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
-				$meta_element .= str_replace(' ',',',$html->find('.user-html',0)->children(1)->innertext);
-
+				$meta_description = str_replace(' ',',',strip_tags($html->find('.user-html p',0)->innertext));
+				// echo $html->find('.user-html p',0)->innertext;
+				// echo $meta_element;
+				// die();
 				$tags = '';
 				foreach($html->find('.meta-attributes__attr-tags a') as $e) {
 					$tags .=$e->innertext.',';
@@ -114,8 +116,8 @@ try {
 				// echo $meta_element;
 				// echo "<hr>";
 				// break;
-				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element,slug,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?)");
-				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element,$slug,date('Y-m-d H:i:s'),date('Y-m-d H:i:s')]);
+				$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element,meta_description,slug,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+				$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element,$meta_description,$slug,date('Y-m-d H:i:s'),date('Y-m-d H:i:s')]);
 				echo "inserted";
 				echo "<br>";
 

@@ -93,8 +93,8 @@
                                 {{-- <img alt="" src="upload/image1.jpg"> --}}
                                 <div class="hover-box">
                                     <div class="project-title">
-                                        <h2>{{ $item->title }}</h2>
-                                        {{-- <h2>{{ substr($item->title,0,15) }}</h2> --}}
+                                        <h4>{{ $item->title }}</h4>
+                                        {{-- <h2>{{ substr($item->title,0,35) }}</h2> --}}
                                         <span>{{$item->category->name}}</span>
                                         <div><a href="{{url('/items/'.$item->slug)}}"><i class="fa fa-arrow-right"></i></a></div>
                                     </div>
@@ -102,9 +102,9 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="col-md-10 col-md-offset-4">
+                    {{-- <div class="col-md-10 col-md-offset-4">
                         {{$items->links()}}
-                    </div> 
+                    </div>  --}}
                 </div>
             </div>
         </div>
@@ -136,7 +136,6 @@
     <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-
 
 </body>
 </html>

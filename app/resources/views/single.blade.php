@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name="keywords" content="{{$item->meta_element}}">
+    <meta name="description" content="{{$item->meta_description}}">
 
     <link href='{{url('http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic')}}' rel='stylesheet' type='text/css'>
 
@@ -162,5 +163,10 @@
     <script src="{{url("js/jquery.nicescroll.min.js")}}"></script>
     <script src="{{url("js/script.js")}}"></script>
 
+    <script>
+        $('.project-text a,.meta-attributes__table a').attr({
+            href: '#'
+        });
+    </script>
 </body>
 </html>

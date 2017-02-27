@@ -12,7 +12,7 @@ class ItemController extends Controller
 	{
 		$website = Website::first();
 		$category = $website->categories()->first();
-		$items = $category->items()->paginate(28);
+		$items = $category->items()->paginate(50);
 		return view('welcome', compact('items'));
 	}
 
