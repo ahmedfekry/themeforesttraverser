@@ -77,8 +77,12 @@
 		<div id="content">
 			<div class="inner-content">
 				<div class="single-project">
-
 					<div class="single-box">
+						<ol class="breadcrumb" style="margin: 0px;">
+						  <li class="breadcrumb-item"><a href="#">Home</a></li>
+						  <li class="breadcrumb-item"><a href="#">{{$item->category->name}}</a></li>
+			              <li class="breadcrumb-item active">{{$item->title}}</li>
+			            </ol>
 						<div class="single-box-content">
 							<div class="project-post-content">
 
@@ -102,7 +106,7 @@
 											<img alt="" src="{{url($rand[0]->big_picture_link)}}">
 											<div class="hover-box">
 												<div class="project-title">
-													<h2>{{$rand[0]->title}}</h2>
+													<h4>{{$rand[0]->title}}</h4>
 													<div><a href="{{$rand[0]->link}}"><i class="fa fa-arrow-right"></i></a></div>
 												</div>
 											</div>
@@ -112,8 +116,8 @@
 											<img alt="" src="{{url($rand[1]->big_picture_link)}}">
 											<div class="hover-box">
 												<div class="project-title">
-													<h2>{{$rand[0]->title}}</h2>
-													<div><a href="{{$rand[0]->link}}"><i class="fa fa-arrow-right"></i></a></div>
+													<h2>{{$rand[1]->title}}</h2>
+													<div><a href="{{url('/items/'.$rand[1]->slug)}}"><i class="fa fa-arrow-right"></i></a></div>
 												</div>
 											</div>
 										</div>

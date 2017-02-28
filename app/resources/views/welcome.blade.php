@@ -84,6 +84,10 @@
         <!-- content 
             ================================================== -->
         <div id="content">
+            <ol class="breadcrumb" style="margin: 0px;">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">{{$items[0]->category->name}}</li>
+            </ol>
             <div class="inner-content">
                 <div class="portfolio-page">
                     <div class="portfolio-box">

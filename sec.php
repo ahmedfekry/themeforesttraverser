@@ -62,7 +62,7 @@ try {
    	}
 
 	// var_dump($row);
-	for ($i=1; $i < 2; $i++) { 
+	for ($i=1; $i < 3; $i++) { 
 		# code...
 		$url = 'https://themeforest.net/category/wordpress?page='.$i;
 		// Retrieve the DOM from a given URL
@@ -103,7 +103,7 @@ try {
 				// description
 				// htmlentities(htmlspecialchars(thehmldata));
 				$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
-				$meta_description = str_replace(' ',',',strip_tags($html->find('.user-html p',0)->innertext));
+				$meta_description = strip_tags($html->find('.user-html p',0)->innertext);
 				// echo $html->find('.user-html p',0)->innertext;
 				// echo $meta_element;
 				// die();
