@@ -80,7 +80,7 @@
 					<div class="single-box">
 						<ol class="breadcrumb" style="margin: 0px;">
 						  <li class="breadcrumb-item"><a href="#">Home</a></li>
-						  <li class="breadcrumb-item"><a href="#">{{$item->category->name}}</a></li>
+						  <li class="breadcrumb-item"><a href="{{url('/')}}">{{$item->category->name}}</a></li>
 			              <li class="breadcrumb-item active">{{$item->title}}</li>
 			            </ol>
 						<div class="single-box-content">
@@ -136,7 +136,7 @@
 										<span><i class="fa fa-money"></i></span><a href="#">{{$item->price}} $</a>
 									</li>
 									<li>
-										<span><i class="fa fa-link"></i></span><a target="_blank" href="{{$item->link}}">themeforest</a>
+										<span><i class="fa fa-link"></i></span><a target="_blank" href="{{$item->link."####"}}">themeforest</a>
 									</li>
 								</ul>
 							</div>
