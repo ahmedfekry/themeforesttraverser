@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', "ItemController@index");
-Route::get('items/{slug}', "ItemController@show");
+Route::get('/category/{category}', "ItemController@index");
+Route::get('/category/{category}/items/{slug}', "ItemController@index");
+// Route::get('items/{slug}', "ItemController@show");
 // Route::get('items/{item}', "ItemController@show");

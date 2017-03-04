@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Website;
 use App\Item;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-	public function index()
+	public function index($category)
 	{
-		$website = Website::first();
-		$category = $website->categories()->first();
+		$category = Category::where('name','=',$category)->first();
+		// $website = Website::first();
+		// $category = $website->categories()->first();
 		$items = $category->items()->paginate(28);
-		return view('welcome', compact('items'));
+		return view('index', compact('items'));
 	}
 
 	public function show($slug)
