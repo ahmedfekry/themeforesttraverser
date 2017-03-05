@@ -9,18 +9,21 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-	public function index($category)
+
+
+	public function showByCategory($category)
 	{
 		$category = Category::where('name','=',$category)->first();
-		// $website = Website::first();
-		// $category = $website->categories()->first();
 		$items = $category->items()->paginate(28);
-		return view('index', compact('items'));
+		return view('category.index', compact('items'));
+
 	}
 
-	public function show($slug)
+	public function show($category,$slug)
 	{
-		$item = Item::where('slug','=',$slug)->first();
+		$category = Category::where('name','=',$category)->first();
+
+		$item = $category->items()->where('slug','=',$slug)->first();
 	
 		$rand = Item::inRandomOrder()->take(2)->get();
 		return view('single',compact(['item','rand']));

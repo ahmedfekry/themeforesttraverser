@@ -27,17 +27,17 @@
             ================================================== -->
         <header>
             <div class="logo-box">
-                <a class="logo" href="index.html"><img alt="" src="images/logo.png"></a>
+                <a class="logo" href="#"><img alt="" src="{{url('images/logo.png')}}"></a>
             </div>
             
             <a class="elemadded responsive-link" href="#">Menu</a>
 
             <div class="menu-box">
                 <ul class="menu">
-                    <li><a class="active" href="index.html"><span>Home</span></a></li>
-                    <li><a href="about.html"><span>About</span></a></li>
-                    <li><a href="blog.html"><span>blog</span></a></li>
-                    <li><a href="single-post.html"><span>Single Post</span></a></li>
+                    <li><a class="active" href="#"><span>Home</span></a></li>
+                    <li><a href="#"><span>About</span></a></li>
+                    <li><a href="#"><span>blog</span></a></li>
+                    <li><a href="#"><span>Single Post</span></a></li>
                     <li class="drop"><a href="#"><span>Go To Level 2</span></a>
                         <ul class="drop-down">
                             <li><a href="#"><span>Level 2</span></a></li>
@@ -50,7 +50,7 @@
                             <li><a href="#"><span>Level 2</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html"><span>Contact</span></a></li>
+                    <li><a href="#"><span>Contact</span></a></li>
                 </ul>               
             </div>
 
@@ -100,7 +100,7 @@
                                         <h4>{{ $item->title }}</h4>
                                         {{-- <h2>{{ substr($item->title,0,35) }}</h2> --}}
                                         <span>{{$item->category->name}}</span>
-                                        <div><a href="{{url('/items/'.$item->slug)}}"><i class="fa fa-arrow-right"></i></a></div>
+                                        <div><a href="{{url('/category/'.$item->category->name.'/items/'.$item->slug)}}"><i class="fa fa-arrow-right"></i></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -129,17 +129,17 @@
     </div>
 
     <div class="preloader">
-        <img alt="" src="images/preloader.gif">
+        <img alt="" src="{{url('images/preloader.gif')}}">
     </div>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="{{url('js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/jquery.migrate.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/jquery.magnific-popup.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/bootstrap.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/jquery.imagesloaded.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/jquery.isotope.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/retina-1.1.0.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/jquery.nicescroll.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/script.js')}}"></script>
 
 </body>
 </html>

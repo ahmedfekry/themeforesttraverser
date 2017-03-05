@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/category/{category}', "ItemController@index");
-Route::get('/category/{category}/items/{slug}', "ItemController@index");
+Route::get('/', 'HomeController@index');
+Route::get('/category/{category}', "ItemController@showByCategory");
+Route::get('/category/{category}/items/{slug}', "ItemController@show");
 // Route::get('items/{slug}', "ItemController@show");
 // Route::get('items/{item}', "ItemController@show");
