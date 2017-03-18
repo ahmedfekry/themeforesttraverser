@@ -36,26 +36,120 @@
 			<a class="elemadded responsive-link" href="#">Menu</a>
 
 			<div class="menu-box">
-				<ul class="menu">
-					<li><a class="active" href="{{url('/')}}"><span>Home</span></a></li>
-					<li><a href="#"><span>About</span></a></li>
-					<li><a href="#"><span>blog</span></a></li>
-					<li><a href="#"><span>Single Post</span></a></li>
-					<li class="drop"><a href="#"><span>Go To Level 2</span></a>
-						<ul class="drop-down">
-							<li><a href="#"><span>Level 2</span></a></li>
-							<li class="drop"><a href="#"><span>Go To Level 3</span></a>
-								<ul class="drop-down">
-									<li><a href="#"><span>Level 3</span></a></li>
-									<li><a href="#"><span>Level 3</span></a></li>
-								</ul>
-							</li>
-							<li><a href="#"><span>Level 2</span></a></li>
-						</ul>
-					</li>
-					<li><a href="#"><span>Contact</span></a></li>
-				</ul>				
-			</div>
+                <ul class="menu">
+                    <li><a class="active" href="index.html"><span>Home</span></a></li>
+                    <li class="drop"><a href="#"><span>Websites</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>wordpress</span></a></li>
+                            <li><a href="#"><span>HTML</span></a></li>
+                            <li><a href="#"><span>Drupal</span></a></li>
+                            <li><a href="#"><span>Joomla</span></a></li>
+                            <li><a href="#"><span>OpenCart</span></a></li>
+                            <li><a href="#"><span>Magento</span></a></li>
+                            <li><a href="#"><span>PSD Templates</span></a></li>
+                            <li><a href="#"><span>Tumblr</span></a></li>
+                            <li><a href="#"><span>Blogger</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#"><span>code scripts</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>JavaScript</span></a></li>
+                            <li><a href="#"><span>PHP Scripts</span></a></li>
+                            <li><a href="#"><span>.NET</span></a></li>
+                            <li><a href="#"><span>WordPress</span></a></li>
+                            <li><a href="#"><span>Plugins</span></a></li>
+                            <li><a href="#"><span>CSS</span></a></li>
+                            <li><a href="#"><span>HTML5</span></a></li>
+                            <li><a href="#"><span>Mobile</span></a></li>
+                            <li><a href="#"><span>Apps</span></a></li>
+                            <li><a href="#"><span>Animate Templates</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#"><span>Video effects</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>After Effects</span></a></li>
+                            <li><a href="#"><span>Apple Motion</span></a></li>
+                            <li><a href="#"><span>Motion Graphics</span></a></li>
+                            <li><a href="#"><span>Stock Footage</span></a></li>
+                            <li><a href="#"><span>Cinema 4D</span></a></li>
+                            <li><a href="#"><span>Add Ons</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#"><span>audio tracks</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>Music</span></a></li>
+                            <li><a href="#"><span>Music Packs</span></a></li>
+                            <li><a href="#"><span>Music Kits</span></a></li>
+                            <li><a href="#"><span>Sound Effects</span></a></li>
+                            <li><a href="#"><span>Source Files</span></a></li>
+                            <li><a href="#"><span>Logos & Idents</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#"><span>Art Graphics</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>Graphics</span></a></li>
+                            <li><a href="#"><span>Print</span></a></li>
+                            <li><a href="#"><span>Web</span></a></li>
+                            <li><a href="#"><span>Add-ons</span></a></li>
+                            <li><a href="#"><span>Vectors</span></a></li>
+                            <li><a href="#"><span>Presentations</span></a></li>
+                            <li><a href="#"><span>Infographics</span></a></li>
+                            <li><a href="#"><span>Icons</span></a></li>
+                            <li><a href="#"><span>Fonts</span></a></li>
+                            <li><a href="#"><span>Logos</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#"><span>photos</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>Animals</span></a></li>
+                            <li><a href="#"><span>Architecture</span></a></li>
+                            <li><a href="#"><span>Business</span></a></li>
+                            <li><a href="#"><span>Food</span></a></li>
+                            <li><a href="#"><span>Health</span></a></li>
+                            <li><a href="#"><span>Sports</span></a></li>
+                            <li><a href="#"><span>People</span></a></li>
+                            <li><a href="#"><span>Technology</span></a></li>
+                            <li><a href="#"><span>Travel</span></a></li>
+                            <li><a href="#"><span>Video Footage</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="drop"><a href="#"><span>3D print</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Free</span></a></li>
+                            <li><a href="#"><span>3D Models</span></a></li>
+                            <li><a href="#"><span>Cars</span></a></li>
+                            <li><a href="#"><span>HDRI Images</span></a></li>
+                            <li><a href="#"><span>CG Textures</span></a></li>
+                            <li><a href="#"><span>Shaders</span></a></li>
+                            <li><a href="#"><span>Base Meshes</span></a></li>
+                            <li><a href="#"><span>Scripts</span></a></li>
+                        </ul>
+                    </li>
+                    
+<!--
+                    <li class="drop"><a href="#"><span>Go To Level 2</span></a>
+                        <ul class="drop-down">
+                            <li><a href="#"><span>Level 2</span></a></li>
+                            <li class="drop"><a href="#"><span>Go To Level 3</span></a>
+                                <ul class="drop-down">
+                                    <li><a href="#"><span>Level 3</span></a></li>
+                                    <li><a href="#"><span>Level 3</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span>Level 2</span></a></li>
+                        </ul>
+                    </li>
+-->
+                    <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>               
+            </div>
+
 
 			<div class="social-box">
 				<ul class="social-icons">
@@ -79,8 +173,8 @@
 				<div class="single-project">
 					<div class="single-box">
 						<ol class="breadcrumb" style="margin: 0px;">
-						  <li class="breadcrumb-item"><a href="#">Home</a></li>
-						  <li class="breadcrumb-item"><a href="{{url('/')}}">{{$item->category->name}}</a></li>
+						  <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+						  <li class="breadcrumb-item"><a href="{{url('/category/'.$item->category->name)}}">{{$item->category->name}}</a></li>
 			              <li class="breadcrumb-item active">{{$item->title}}</li>
 			            </ol>
 						<div class="single-box-content">

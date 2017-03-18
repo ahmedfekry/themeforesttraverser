@@ -9,11 +9,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$categories = Category::with(array('items'=>function($query){
-				        $query->limit(10);
-				    }))->get();
-
-    	// return $category;
+    	$categories = Category::with(['items'=>function($query){
+    					       return $query->limit(10);
+    					    }])->get();
+    	return $categories;
     	return view('welcome',compact('categories'));
     }
 }
