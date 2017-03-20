@@ -67,7 +67,7 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 	   	}
 		for ($i=1; $i <= $number_of_pages; $i++) { 
 			# code...
-			$url = $sub_link.$i;
+			$url = $sub_link.$i.'&referrer=search&utf8=%E2%9C%93&view=list';
 			// echo $url;
 			// Retrieve the DOM from a given URL
 			$html = file_get_html($url,false);
@@ -80,6 +80,7 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 				$slug = format_uri($title);
 				// meta_element
 				$meta_element = str_replace(' ', ',', $title);
+				$meta_element .='free,premium,download';
 				$meta_description = '';
 				$stmt = $conn->prepare("SELECT * FROM item WHERE title = ?"); 
 				$stmt->execute([$title]);
@@ -99,18 +100,13 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 					// htmlentities(htmlspecialchars(thehmldata));
 					$description = htmlentities(htmlspecialchars($html->find('.user-html',0)->innertext));
 					$meta_description = strip_tags($html->find('.user-html p',0)->innertext);
-					// echo $html->find('.user-html p',0)->innertext;
-					// echo $meta_element;
-					// die();
+					$meta_description .= 'free,premium,download';
 					$tags = '';
 					foreach($html->find('.meta-attributes__attr-tags a') as $e) {
 						$tags .=$e->innertext.',';
 					}
 					$meta_element .=$tags;
-					// echo $tags;
-					// echo $meta_element;
-					// echo "<hr>";
-					// break;
+
 					$stmt = $conn->prepare("INSERT INTO item (title,link,small_picture_link,big_picture_link,price,description,meta_data,category_id,meta_element,meta_description,slug,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
 					$stmt->execute([$title,$link,$small_image,$big_image,$price,$description,$meta_attributes,$category['id'],$meta_element,$meta_description,$slug,date('Y-m-d H:i:s'),date('Y-m-d H:i:s')]);
 					array_push($response,"inserted");

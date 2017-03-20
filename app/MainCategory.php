@@ -23,19 +23,14 @@ class MainCategory extends Model
     public function categories()
 
     {
-
     	return $this->hasMany('App\Category');
-
     }
 
 
 
     public function items()
-
     {
-
-    	return $this->hasManyThrough('App\Item','App\Category','website_id','category_id','id');
-
+    	return $this->hasManyThrough('App\Item','App\Category','main_category_id','category_id','id');
     }
 
 }
