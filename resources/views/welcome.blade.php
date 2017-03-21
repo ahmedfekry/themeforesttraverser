@@ -1,15 +1,3 @@
-{{-- <ul>
-    @foreach($categories as $category)
-            <li><a href="{{url('/category/'.$category->name)}}" >{{$category->name}}</a> </li>
-                <ul>
-                    @foreach($category->items as $item)
-                        <li>{{$item->title}}</li>
-                        <li>{{$item->big_picture_link}}</li>
-                        <br>
-                    @endforeach
-                </ul>
-    @endforeach
-</ul> --}}
 <!doctype html>
 
 
@@ -109,11 +97,11 @@
                             <h1><a href="#">{{ucwords(str_replace('-', ' ', $main_category->name))}}</a></h1>
                             <ul>
                                 <?php 
-                                    $items = $main_category->items->orderBy('created_at','asc')->take(10)->get();
+                                    $items = $main_category->items()->orderBy('created_at','desc')->take(10)->get();
                                  ?>
                                  @foreach($items as $item)
                                     <li>
-                                        <a href="{{'/category/'.$item->category.'/items/'.$item->slug}}"><img alt="" src="{{$item->big_picture_link}}"></a>
+                                        <a title="{{$item->title}}" href="{{url('/category/'.$item->category->name.'/items/'.$item->slug)}}"><img alt="" src="{{$item->big_picture_link}}"></a>
                                     </li>
                                 @endforeach
                                 
