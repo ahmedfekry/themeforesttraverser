@@ -101,7 +101,7 @@
                                  ?>
                                  @foreach($items as $item)
                                     <li>
-                                        <a title="{{$item->title}}" href="{{url('/category/'.$item->category->name.'/items/'.$item->slug)}}"><img alt="" src="{{$item->big_picture_link}}"></a>
+                                        <a title="{{$item->title}}" href="{{url('/category/'.$item->category->name.'/items/'.$item->slug)}}"><img alt="" src="{{$item->small_picture_link}}"></a>
                                     </li>
                                 @endforeach
                                 

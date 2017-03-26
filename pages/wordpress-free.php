@@ -6,8 +6,6 @@ ini_set('max_execution_time', 3000000);
 
 error_reporting(E_ALL);
 
-
-
 require 'html_dom.php';
 
 require 'config.php';
@@ -26,7 +24,9 @@ function format_uri( $string, $separator = '-' )
     return $string;
 }
 
-function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$sub_link)
+fetch_date_free('website','wordpress','http://all-free-download.com/free-website-templates/sort-by-popular/page/',);
+
+function fetch_date_free($mainCategory,$category_name,$main_link,$number_of_pages,$sub_link)
 {
 	$response = array();
 	try {
@@ -35,10 +35,7 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    echo "Connected successfully";
 		echo "<br>";
-		// $website_name = "themeforest";
-		// $website_link = ""; // could be null
-		// $category_name = "wordpress"; 
-		// $category_link = ""; // could be null
+
 		$m_category = null;
 		$category = null;
 		$stmt = $conn->prepare("SELECT * FROM main_category WHERE name = ?"); 
@@ -67,7 +64,7 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 	   	}
 		for ($i=1; $i <= $number_of_pages; $i++) { 
 			# code...
-			$url = $sub_link.$i.'&referrer=search&utf8=%E2%9C%93&view=list';
+			$url = $sub_link.$i;
 			// echo $url;
 			// Retrieve the DOM from a given URL
 			$html = file_get_html($url,false);
@@ -88,7 +85,7 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 			   	$item = $stmt->fetch();
 			   	if ($item == null) {
 			   		// link
-					$link = $main_link.$e->getElementByTagName('h3')->getElementByTagName('a')->href;
+					$link = $e->getElementByTagName('h3')->getElementByTagName('a')->href;
 					$html = file_get_html($link,false);
 					// big image
 					$big_image = $html->find('.item-preview img',0)->src;
@@ -124,3 +121,8 @@ function fetch_date($mainCategory,$category_name,$main_link,$number_of_pages,$su
 }
 	
 ?>
+
+
+
+
+ ?>

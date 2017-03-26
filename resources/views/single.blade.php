@@ -183,7 +183,17 @@
 								<div class="flexslider">
 									<ul class="slides">
 										<li>
-											<img alt="" src="{{$item->big_picture_link}}" />
+                                            @if($item->video_link)
+                                                @if(strpos($item->video_link,'youtube') != 0)
+                                                    <iframe width="100%" height="350px" src="{{$item->video_link}}"></iframe>
+                                                @else
+                                                    <video width="100%" controls>
+                                                        <source src="{{$item->video_link}}" type="video/mp4">
+                                                    </video>
+                                                @endif
+                                            @else
+											 <img alt="" src="{{$item->big_picture_link}}" />
+                                            @endif
 										</li>
 									</ul>
 								</div>
@@ -227,15 +237,24 @@
 										<span><i class="fa fa-user"></i></span><a href="#">{{$item->category->name}}</a>
 									</li>
 									<li>
-										<span><i class="fa fa-money"></i></span><a href="#">{{$item->price}} $</a>
+										<span>
+                                            <i class="fa fa-money"></i>
+                                        </span>
+                                        @if($item->price == null)
+                                            free
+                                        @else
+                                            <a href="#">{{$item->price}} $</a>
+                                        @endif
 									</li>
 									<li>
-										<span><i class="fa fa-link"></i></span><a target="_blank" href="{{$item->link."####"}}">themeforest</a>
+										<span><i class="fa fa-link"></i></span><a target="_blank" href="{{$item->link."####"}}">Original Link</a>
 									</li>
 								</ul>
 							</div>
 							<div class="box">
-								<?php echo html_entity_decode(htmlspecialchars_decode($item->meta_data)); ?>
+								<?php 
+                                    echo html_entity_decode(htmlspecialchars_decode($item->meta_data));
+                                ?>
 							</div>
 						</div>
 					</div>

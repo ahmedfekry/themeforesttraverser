@@ -1591,3 +1591,7 @@ ul.depth li:before {
 .home .flexslider .slides {
     height: 100%;
 }
+
+.project-text img{
+    width: 100%;
+}
